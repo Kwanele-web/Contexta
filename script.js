@@ -50,7 +50,7 @@ function dropToEditor(wordArray) {
 }
 
 
-// --- SECTION 4: THE API CALLS (INSTANT) ---
+// --- SECTION 4: THE API CALLS (SECURE BACKEND PROXY) ---
 
 async function getDefinition() {
     outputPanel.innerHTML = "<em>Searching...</em>";
@@ -106,7 +106,9 @@ function smartSwap(synonym) {
 }
 
 
-// This function talks to the MyMemory API and swaps text in the editor
+// --- SECTION 6: TRANSLATION (NOW USES SECURE BACKEND PROXY) ---
+
+// This function now calls our secure backend instead of exposing API keys
 async function translateAndSwap() {
     const selection = window.getSelection();
     const textToTranslate = selection.toString();
@@ -143,4 +145,3 @@ async function translateAndSwap() {
         document.getElementById('results-panel').innerText = "Error: Connection failed.";
     }
 }
-    
