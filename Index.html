@@ -1,1 +1,51 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contexta MVP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1 class="app-title">CONTEXTA</h1>
+        <div class="app-subtitle">MVP v1.0 — Powered by NatWeb</div>
+    </header>
+
+    <div class="container">
+        <div id="editor" contenteditable="true">
+            Type something here... double-click a word to analyze or highlight a paragraph to translate.
+        </div>
+
+        <div id="sidebar">
+            <div class="sidebar-top">
+                <h2 id="active-word-display">Assistant</h2>
+                
+                <div id="menu" style="display: none;">
+                    <select id="language-select">
+                        <option value="en">To English</option>
+                        <option value="af">To Afrikaans</option>
+                        <option value="zu">To isiZulu</option>
+d<  option value="st">To Sesotho</option>
+                    </select>
+
+                    <button onclick="translateAndSwap()">Translate</button>
+                    <button onclick="getDefinition()">Definition</button>
+                    <button onclick="getEtymology()">Etymology</button>
+                    <button onclick="smartSwap(prompt('Enter a synonym:'))">Smart Swap</button>
+                </div>
+
+                <div id="results-panel"></div>
+            </div>
+
+            <div class="brand-footer">
+                 <img src="logo.jpg" alt="Company Logo" class="footer-logo">
+            </div>
+        </div> 
+    </div> 
+
+    <script src="script.js"></script>
+</body>
+</html>
